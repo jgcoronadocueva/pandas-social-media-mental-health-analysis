@@ -11,7 +11,7 @@ The software allows users to to analyze the following:
 * The influence of break days of social media in mental health metrics such as: happiness, stress, and sleep quality.
 
 
-[Data Analysis with Pandas](http://youtube.link.goes.here)
+[Data Analysis with Pandas](https://youtu.be/lEWP3q9PaNU)
 
 # Data Analysis Results
 
