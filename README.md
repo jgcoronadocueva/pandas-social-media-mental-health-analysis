@@ -39,6 +39,8 @@ Libraries used:
 * kagglehub – for downloading datasets directly from Kaggle
 * seaborn - for statistical data visualization and improved aesthetics
 
+To install libraries used, you can run the command: `pip install -r requirements.txt` 
+
 # Useful Websites
 
 * [W3Schools – Matplotlib Pyplot](https://www.w3schools.com/python/matplotlib_pyplot.asp)
