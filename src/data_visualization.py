@@ -41,7 +41,7 @@ def plot_usage_vs_stress_by_age_group(df):
     plt.tight_layout()
     
     # Saves and displays the plot
-    plt.savefig("./data/Daily Usage vs Stress Level by Age Groups Correlation.png")
+    plt.savefig("./graphs/Daily Usage vs Stress Level by Age Groups Correlation.png")
     plt.show()
     
 
@@ -91,7 +91,7 @@ def plot_platform_vs_stress_by_age_group(df):
     plt.tight_layout()
 
     # Saves and displays the plot
-    plt.savefig("./data/Average Stress Level by Age Group and Social Media Platform.png")
+    plt.savefig("./graphs/Average Stress Level by Age Group and Social Media Platform.png")
     plt.show()
     
 
@@ -115,16 +115,16 @@ def plot_breaks_vs_health_metrics(df):
 
     # Gets average for each metric per break days group
     for i, metric in enumerate(metrics):
-        avg_metric = df.groupby('break_days_group')[metric].mean().reset_index()
+        mid_metric = df.groupby('break_days_group')[metric].median().reset_index()
         
         sns.barplot(
             x='break_days_group', 
             y=metric, 
-            data=avg_metric, 
+            data=mid_metric, 
             ax=axes[i])
         axes[i].set_title(titles[i])
         axes[i].set_xlabel('Break Days Group')
-        axes[i].set_ylabel('Average (1–10)')
+        axes[i].set_ylabel('Score (1–10)')
         axes[i].set_ylim(0, 10)
         # Show grid lines
         axes[i].grid(True)
@@ -133,5 +133,5 @@ def plot_breaks_vs_health_metrics(df):
     plt.tight_layout()
 
     # Saves and displays the plot
-    plt.savefig("./data/Mental Health Metrics by Break Days Groups.png")
+    plt.savefig("./graphs/Mental Health Metrics by Break Days Groups.png")
     plt.show()

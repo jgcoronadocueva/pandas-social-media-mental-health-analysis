@@ -4,8 +4,8 @@ import pandas as pd
 
 def analyze_usage_vs_stress_by_age_group(df):
     """
-    Question 1: Is there a relationship between the number of daily hours spent on social media relate 
-    to stress levels based on the user's age?
+    Question 1: Is there a relationship between the number of daily hours spent on 
+    social media and stress levels based on the user's age?
 
     Calculate and prints average daily usage, average stress, and correlation between usage 
     and stress for each age group.
@@ -37,7 +37,8 @@ def analyze_usage_vs_stress_by_age_group(df):
 
 def analyze_platform_vs_stress_by_age_group(df):
     """
-    Question 2: Does the choice of social media platform influence stress level differently across age groups?
+    Question 2: Does the choice of social media platform influence stress level 
+    differently across age groups?
 
     Calculates and prints the average stress for each social media platform within each age group.
 
@@ -84,11 +85,11 @@ def analyze_breaks_vs_health_metrics(df):
 
     # Group by break days group and iterates over each
     for break_days_group, subset in df.groupby(break_days_col):
-        avg_stress = round(subset[stress_col].mean(), 2)
-        avg_sleep = round(subset[sleep_col].mean(), 2)
-        avg_happiness = round(subset[happiness_col].mean(), 2)
+        mid_stress = subset[stress_col].median()
+        mid_sleep = subset[sleep_col].median()
+        mid_happiness = subset[happiness_col].median()
 
         print(f"\nBreak days group: {break_days_group}")
-        print(f"  Average stress: {avg_stress}")
-        print(f"  Average sleep quality: {avg_sleep}")
-        print(f"  Average happiness: {avg_happiness}")
+        print(f"  Median stress: {mid_stress}")
+        print(f"  Median sleep quality: {mid_sleep}")
+        print(f"  Median happiness: {mid_happiness}")

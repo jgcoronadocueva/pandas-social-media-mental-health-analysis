@@ -64,8 +64,8 @@ def preprocess_dataset(df):
     df['age_group'] = pd.cut(df['age'], bins=bins, labels=labels, right=True)
 
     # Define break days bins and labels
-    bins = [0, 1, 3, 7, 9]
-    labels = ['No break', '1-3', '4-7', '7+']
+    bins = [0, 1, 4, 9]
+    labels = ['No break', '1-4', '4+']
 
     # Create a new column for break days groups
     df['break_days_group'] = pd.cut(df['days_without_social_media'], bins=bins, labels=labels, right=True)
